@@ -1,0 +1,55 @@
+label.row-single {
+  width: 15%;
+  text-align: left;
+  margin-top: 8px;
+}
+
+div.control {
+  width: 80%;
+}
+
+div.field {
+  display: flex;
+}
+
+div.data-fields {
+  display: flex;
+  width: 95%;
+}
+
+div.data-field {
+  display: flex;
+  width: 50%;
+}
+
+div.data-field .margined {
+  display: flex;
+  width: 50%;
+  margin-left: 2%;
+}
+
+div.data-control {
+  width: 80%;
+}
+
+div.data-control-right {
+  width: 80%;
+}
+
+div.data-control > input {
+  width: 80%;
+  margin-left: 8%;
+}
+
+div.data-control > input.right {
+  width: 180%;
+  border: 1px solid orange;
+  margin-left: 1px;
+
+}
+
+label.data-label {
+  width: 20%;
+  text-align: left;
+  margin-top: 8px;
+}

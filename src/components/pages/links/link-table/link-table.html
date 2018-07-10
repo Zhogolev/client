@@ -1,0 +1,39 @@
+<div class="container" xmlns:v-on="http://www.w3.org/1999/xhtml">
+  <table class="table is-hoverable" style="width: 100%">
+    <thead>
+    <tr class="has-text-weight-semibold has-text-centered">
+      <td class="has-text-centered">Number</td>
+      <td class="has-text-centered">Url</td>
+      <td class="has-text-centered">Start</td>
+      <td class="has-text-centered">Expiration</td>
+      <td></td>
+      <td>
+        <button @click="preCreateLink" class="button is-info is-small">Create </button>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="item in links" class="has-text-centered">
+      <td class="has-text-centered">{{links.indexOf(item) + 1}}</td>
+      <td class="has-text-centered">{{item.url}}</td>
+      <td class="has-text-centered">{{item.start.split('T')[0]}}</td>
+      <td class="has-text-centered">{{item.expiration.split('T')[0]}}</td>
+      <td>
+        <button @click="preShowUpdate(links.indexOf(item))" class="button is-dark is-small">Update</button>
+      </td>
+      <td>
+        <button @click="preDeleteLink(links.indexOf(item))" class="button is-dark is-small">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <change v-if="UpdateShow" v-on:change-element="changeElement" :link="links[currentItem]" @close="UpdateShow = false"></change>
+
+  <modal-del v-on:delete-element="deleteElement" v-if="showDelete" @close="showDelete = false"></modal-del>
+
+  <modal-create v-on:create-element="createElement" v-if="showCreate" @close="showCreate = false"></modal-create>
+
+</div>
+
+

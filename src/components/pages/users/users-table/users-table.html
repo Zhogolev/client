@@ -1,0 +1,32 @@
+<div class="container" xmlns:v-on="http://www.w3.org/1999/xhtml">
+  <table class="table is-hoverable" style="width: 100%">
+    <thead>
+    <tr class="has-text-weight-semibold has-text-centered">
+      <td class="has-text-centered">Number</td>
+      <td class="has-text-centered">Name</td>
+      <td class="has-text-centered">Email</td>
+      <td class="has-text-centered">Active</td>
+      <td>
+        <button @click="showCreate = true" class="button is-info is-small">Create</button>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="item in links" class="has-text-centered">
+      <td class="has-text-centered">{{links.indexOf(item) + 1}}</td>
+      <td class="has-text-centered">{{item.name}}</td>
+      <td class="has-text-centered">{{item.email}}</td>
+      <td class="has-text-centered">{{item.isActive}}</td>
+      <td>
+        <button @click="preDeleteLink(links.indexOf(item))" class="button is-dark is-small">Change active</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <modal-create v-on:create-element="createElement" v-if="showCreate" @close="showCreate = false"></modal-create>
+  <modal-del v-on:delete-element="deleteElement" v-if="showDelete" @close="showDelete = false"></modal-del>
+
+</div>
+
+
