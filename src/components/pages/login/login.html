@@ -1,5 +1,26 @@
-
-<section class="login">
-  <h1>login Component</h1>
-</section>
-
+<div class="modal is-active" style="width: 100%">
+  <div class="modal-background" @click="close"></div>
+  <div class="modal-card" style="width: 50%">
+    <div class="modal-card-head  is-inline">
+      <h2 class="label">Log in</h2>
+    </div>
+    <div class="modal-card-body">
+      <div class="field">
+        <label class="label row-single" for="email">EMAIL:</label>
+        <div class="control">
+          <input class="input" type="email" id="email" placeholder="your_email@domain.com " v-model="email">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label row-single" for="password">PASSWORD:</label>
+        <div class="control">
+          <input class="input" type="password" id="password" placeholder="##password" v-model="password">
+        </div>
+      </div>
+    </div>
+    <footer class="modal-card-foot is-inline">
+      <button class="button is-success" @click="loggin">Connect</button>
+      <button class="button" @click="close">Registration</button>
+    </footer>
+  </div>
+</div>

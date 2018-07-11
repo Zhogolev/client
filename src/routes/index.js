@@ -1,5 +1,6 @@
 import Links from '@/components/pages/links/index'
 import Users from '@/components/pages/users/index'
+import Login from '@/components/pages/login/index'
 const routes = [
 
   {
@@ -14,7 +15,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: Login
   }
 ]
